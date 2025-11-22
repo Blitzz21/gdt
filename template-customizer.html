@@ -22,13 +22,10 @@
         .dropzone.is-dragover { border-color: #2563eb; background: rgba(37,99,235,0.05); box-shadow: 0 12px 30px rgba(37,99,235,0.12); }
     </style>
 </head>
-<body class="bg-gray-50 text-slate-900 overflow-x-hidden">
-    <div class="hero-accent w-72 h-72 bg-blue-200 -top-24 -left-10"></div>
-    <div class="hero-accent w-80 h-80 bg-orange-200 top-10 -right-10"></div>
-
-    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300">
-        <nav class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-18">
+<body>
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300 overflow-hidden">
+        <nav class="px-4 mx-auto w-full max-w-7xl sm:px-5 lg:px-6">
+            <div class="flex flex-wrap items-center justify-between gap-3 py-2">
                 <div class="flex items-center py-4">
                     <a href="index.html" class="group relative flex items-center gap-3">
                         <div class="relative">
@@ -37,7 +34,7 @@
                         </div>
                     </a>
                 </div>
-                <div class="items-center hidden lg:flex lg:gap-1">
+                <div class="items-center hidden lg:flex lg:gap-2">
                     <a href="index.html#home" class="nav-link group relative px-4 py-2.5 text-sm font-semibold text-gray-700 transition-all duration-200 rounded-xl hover:text-blue-600 hover:bg-blue-50"><span class="relative z-10">Home</span><div class="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div></a>
                     <a href="index.html#products" class="nav-link group relative px-4 py-2.5 text-sm font-semibold text-gray-700 transition-all duration-200 rounded-xl hover:text-blue-600 hover:bg-blue-50"><span class="relative z-10">Templates</span><div class="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div></a>
                     <a href="index.html#how-it-works" class="nav-link group relative px-4 py-2.5 text-sm font-semibold text-gray-700 transition-all duration-200 rounded-xl hover:text-blue-600 hover:bg-blue-50"><span class="relative z-10">How It Works</span><div class="absolute inset-0 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"></div></a>
@@ -69,42 +66,19 @@
             </div>
         </nav>
     </header>
-    <div class="h-18"></div>
-
-    <main class="relative min-h-screen py-16 pb-28 bg-gradient-to-b from-slate-50 via-white to-slate-100">
-        <div class="max-w-6xl mx-auto px-6 space-y-10">
-            <section class="panel rounded-[32px] bg-white p-6 sm:p-8 relative overflow-hidden">
-                <div class="absolute inset-0 pointer-events-none opacity-30" style="background: radial-gradient(circle at 20% 20%, rgba(59,130,246,0.25), transparent 45%), radial-gradient(circle at 80% 10%, rgba(249,115,22,0.22), transparent 40%);"></div>
-                <div class="relative flex flex-col gap-6 lg:flex-row lg:items-center">
-                    <div class="flex-1 space-y-3">
-                        <p class="text-xs uppercase tracking-[0.4em] text-blue-600">Template studio</p>
-                        <h1 class="text-3xl sm:text-4xl font-semibold text-slate-900">Personalize your design before it hits the press</h1>
-                        <p class="text-slate-600 max-w-2xl">Match school colors, lock in names, and upload layered assets. Real-time preview keeps parents and coaches aligned, so approvals move fast.</p>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4 text-center">
-                        <div class="rounded-2xl border border-slate-200 p-4 bg-slate-50">
-                            <p class="text-sm text-slate-500">Revision budget</p>
-                            <p class="text-2xl font-semibold text-slate-900">Unlimited</p>
-                        </div>
-                        <div class="rounded-2xl border border-slate-200 p-4 bg-slate-50">
-                            <p class="text-sm text-slate-500">Template</p>
-                            <p id="template-name-display" class="text-2xl font-semibold text-slate-900">Basketball Template 1</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="grid gap-8 lg:grid-cols-[1.1fr_1.2fr]">
-                <div class="workspace-panel rounded-[32px] p-6 sm:p-8 text-white relative overflow-hidden bg-slate-900" id="template-preview-panel">
-                    <div class="flex items-center justify-between mb-6">
+    <main class="flex mx-auto mt-8 md:mt-16 lg:mt-18 py-16 pb-28 bg-gradient-to-b from-slate-50 via-white to-slate-100">
+        <div class="px-4 sm:px-6 space-y-10 overflow-y-hidden">
+            <section class="grid gap-8 md:grid-cols-1 xl:grid-cols-[1.1fr_1.2fr] max-w-7xl mx-auto">
+                <div class="workspace-panel rounded-[32px] px-2 py-4 md:p-8 text-white relative overflow-hidden bg-slate-900" id="template-preview-panel">
+                    <div class="flex flex-col md:flex-row items-center justify-between mb-6">
                         <div class="px-3 py-1 rounded-full bg-white/10 border border-white/20 text-xs uppercase tracking-[0.3em]">Preview</div>
                         <div class="flex gap-2">
-                            <button class="toolbar-button px-4 py-2 rounded-full text-xs font-semibold transition" data-preview-angle="front" aria-pressed="true">Front</button>
-                            <button class="toolbar-button px-4 py-2 rounded-full text-xs font-semibold transition" data-preview-angle="back" aria-pressed="false">Back</button>
+                            <button class="toolbar-button px-2 py-2 rounded-full text-xs font-semibold transition" data-preview-angle="front" aria-pressed="true">Front</button>
+                            <button class="toolbar-button px-2 py-2 rounded-full text-xs font-semibold transition" data-preview-angle="back" aria-pressed="false">Back</button>
                         </div>
                     </div>
-                    <div class="bg-white rounded-[28px] p-6 sm:p-8 flex flex-col gap-6">
-                        <div class="flex items-center justify-between text-sm text-slate-600">
+                    <div class="bg-white rounded-[28px] p-6 sm:p-8 flex flex-col gap-6 overflow-hidden">
+                        <div class="flex flex-col md:flex-row items-center justify-between text-sm text-slate-600">
                             <div class="flex items-center gap-2">
                                 <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
                                 <span class="font-semibold text-slate-800">Live fidelity</span>
@@ -115,8 +89,8 @@
                             </div>
                         </div>
                         <div class="flex flex-col items-center gap-6">
-                            <div class="bg-slate-50 rounded-3xl p-6 shadow-inner w-full flex justify-center">
-                                <img id="preview-image" src="img/mock-ups/sample3-mockup.png" alt="Template preview" class="w-56 sm:w-64 object-contain drop-shadow-xl">
+                            <div class="bg-slate-50 rounded-3xl p-2 shadow-inner w-full flex justify-center overflow-hidden">
+                                <img id="preview-image" src="img/mock-ups/sample3-mockup.png" alt="Template preview" class="w-48 m:w-64 max-w-full object-contain drop-shadow-xl">
                             </div>
                             <div class="flex flex-wrap gap-3 justify-center">
                                 <button class="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wide border border-slate-200 text-slate-700 hover:border-blue-300 transition">Change background</button>
@@ -129,21 +103,21 @@
 
                 <div class="space-y-6">
                     <div class="control-card rounded-3xl bg-white p-6 space-y-4">
-                        <div class="flex items-center justify-between">
+                        <div class="flex flex-col md:flex-row items-center justify-between">
                             <div>
                                 <p class="text-xs uppercase tracking-[0.4em] text-blue-600 control-label">Step 1</p>
                                 <h2 class="text-xl font-semibold">Select School Color</h2>
                             </div>
                             <span id="primary-swatch" class="w-10 h-10 rounded-full swatch" style="background: linear-gradient(135deg,#FDD100,#fbbf24);"></span>
                         </div>
-                        <div class="flex gap-3 items-center">
+                        <div class="flex flex-col md:flex-row gap-3 items-center">
                             <div class="flex-1 input-shell border border-slate-200 rounded-xl px-4 py-3 bg-white flex items-center gap-3">
                                 <input id="primary-color-text" type="text" class="w-full focus:outline-none text-sm" placeholder="#FDD100" value="#FDD100">
                                 <input id="primary-color-picker" type="color" class="w-10 h-10 rounded-lg border border-slate-200" value="#fdd100">
                             </div>
                             <button class="px-4 py-2 text-sm font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition" id="apply-primary">Select</button>
                         </div>
-                        <div class="grid grid-cols-2 gap-3">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                             <div class="space-y-2">
                                 <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Font Fill Color</label>
                                 <div class="flex gap-2 items-center input-shell border border-slate-200 rounded-lg px-3 py-2 bg-white">
@@ -162,7 +136,7 @@
                     </div>
 
                     <div class="control-card rounded-3xl bg-white p-6 space-y-4">
-                        <div class="flex items-center justify-between">
+                        <div class="flex flex-col md:flex-row items-center justify-between">
                             <div>
                                 <p class="text-xs uppercase tracking-[0.4em] text-blue-600 control-label">Step 2</p>
                                 <h2 class="text-xl font-semibold">Enter personalization</h2>
@@ -171,21 +145,21 @@
                         </div>
                         <div class="space-y-3">
                             <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Last name</label>
-                            <div class="flex gap-2">
+                            <div class="flex flex-col sm:flex-row gap-2">
                                 <input type="text" class="flex-1 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Smith">
                                 <button class="px-4 py-3 text-sm font-semibold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition">Apply</button>
                             </div>
                         </div>
                         <div class="space-y-3">
                             <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">School name (optional)</label>
-                            <div class="flex gap-2">
+                            <div class="flex flex-col sm:flex-row gap-2">
                                 <input type="text" class="flex-1 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="School Name">
                                 <button class="px-4 py-3 text-sm font-semibold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition">Apply</button>
                             </div>
                         </div>
                         <div class="space-y-3">
                             <label class="text-xs font-semibold text-slate-500 uppercase tracking-wide">Team name (optional)</label>
-                            <div class="flex gap-2">
+                            <div class="flex flex-col sm:flex-row gap-2">
                                 <input type="text" class="flex-1 border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Knights">
                                 <button class="px-4 py-3 text-sm font-semibold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition">Apply</button>
                             </div>
@@ -193,7 +167,7 @@
                     </div>
 
                     <div class="control-card rounded-3xl bg-white p-6 space-y-4">
-                        <div class="flex items-center justify-between">
+                        <div class="flex flex-col md:flex-row items-center justify-between">
                             <div>
                                 <p class="text-xs uppercase tracking-[0.4em] text-blue-600 control-label">Step 3</p>
                                 <h2 class="text-xl font-semibold">Upload your image</h2>
@@ -222,21 +196,37 @@
             </section>
 
             <section class="panel rounded-3xl bg-white p-6 sm:p-8 border border-slate-100 shadow-lg flex flex-col md:flex-row md:items-center gap-6">
-                <div class="flex-1 space-y-2">
-                    <p class="text-xs uppercase tracking-[0.4em] text-blue-600">Hand off</p>
-                    <h2 class="text-2xl font-semibold text-slate-900">Ready to ship this look?</h2>
-                    <p class="text-slate-600">Save this configuration for future rosters, export layered print files, or push directly into the cart.</p>
+                <div class="inline-flex justify-center items-center w-full gap-3">
+                    <button class="px-5 py-3 md:px-8 md:py-6 lg:px-12 lg:text-lg rounded-2xl border border-slate-200 text-sm font-semibold text-slate-700 hover:border-blue-300 transition">Save draft</button>
+                    <button class="px-5 py-3 md:px-8 md:py-6 lg:px-12 lg:text-lg rounded-2xl bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition">Sync to cart</button>
                 </div>
-                <div class="flex flex-wrap gap-3">
-                    <button class="px-5 py-3 rounded-2xl border border-slate-200 text-sm font-semibold text-slate-700 hover:border-blue-300 transition">Save draft</button>
-                    <button class="px-5 py-3 rounded-2xl bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition">Sync to cart</button>
+            </section>
+
+            <section class="panel rounded-[32px] bg-white p-6 sm:p-8 relative overflow-hidden">
+                <div class="absolute inset-0 pointer-events-none opacity-30" style="background: radial-gradient(circle at 20% 20%, rgba(59,130,246,0.25), transparent 45%), radial-gradient(circle at 80% 10%, rgba(249,115,22,0.22), transparent 40%);"></div>
+                <div class="relative flex flex-col gap-6 lg:flex-row lg:items-center">
+                    <div class="flex-1 space-y-3">
+                        <p class="text-xs uppercase tracking-[0.4em] text-blue-600">Template studio</p>
+                        <h1 class="text-3xl sm:text-4xl font-semibold text-slate-900">Personalize your design before it hits the press</h1>
+                        <p class="text-slate-600 max-w-2xl">Match school colors, lock in names, and upload layered assets. Real-time preview keeps parents and coaches aligned, so approvals move fast.</p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="rounded-2xl border border-slate-200 p-4 bg-slate-50">
+                            <p class="text-sm text-slate-500">Revision budget</p>
+                            <p class="text-2xl font-semibold text-slate-900">Unlimited</p>
+                        </div>
+                        <div class="rounded-2xl border border-slate-200 p-4 bg-slate-50">
+                            <p class="text-sm text-slate-500">Template</p>
+                            <p id="template-name-display" class="text-2xl font-semibold text-slate-900">Basketball Template 1</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
     </main>
-    <footer class="animate-on-scroll relative z-100 border-t border-slate-200 py-12 bg-white shadow-[0_-12px_40px_rgba(15,23,42,0.06)]">
+    <footer class="border-t border-slate-200 py-12 bg-white">
         <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-4 text-sm text-slate-600">
-            <div class="animate-on-scroll" data-animate="fade-right">
+            <div>
                 <p class="text-ink font-semibold text-lg mb-3">GameDay Tees</p>
                 <p>Precision-built apparel studio for youth sports.</p>
                 <div class="mt-4 space-y-1">
@@ -244,36 +234,36 @@
                     <a href="mailto:info@precisionsgraphics.com" class="block hover:text-ink">info@precisionsgraphics.com</a>
                 </div>
             </div>
-            <div class="animate-on-scroll" data-animate="fade-up">
-                <p class="text-ink font-semibold mb-3">Explore</p>
+            <div>
+                <p class="text-gray-900 font-semibold mb-3">Explore</p>
                 <ul class="space-y-2">
-                    <li><a href="index.html#how-it-works" class="hover:text-ink">Workflow</a></li>
-                    <li><a href="index.html#process" class="hover:text-ink">Production Lab</a></li>
-                    <li><a href="index.html#faq" class="hover:text-ink">Guarantee</a></li>
+                    <li><a href="#how-it-works" class="hover:text-gray-900">Workflow</a></li>
+                    <li><a href="#process" class="hover:text-gray-900">Production Lab</a></li>
+                    <li><a href="#faq" class="hover:text-gray-900">Guarantee</a></li>
                 </ul>
             </div>
-            <div class="animate-on-scroll" data-animate="fade-up">
-                <p class="text-ink font-semibold mb-3">Support</p>
+            <div>
+                <p class="text-gray-900 font-semibold mb-3">Support</p>
                 <ul class="space-y-2">
-                    <li><a href="#" class="hover:text-ink">Track order</a></li>
-                    <li><a href="#" class="hover:text-ink">Size guide</a></li>
-                    <li><a href="#" class="hover:text-ink">Returns</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Track order</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Size guide</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Returns</a></li>
                 </ul>
             </div>
-            <div class="animate-on-scroll" data-animate="fade-left">
-                <p class="text-ink font-semibold mb-3">Social</p>
+            <div>
+                <p class="text-gray-900 font-semibold mb-3">Social</p>
                 <div class="flex gap-4 text-slate-500">
-                    <a href="#" class="hover:text-ink">Instagram</a>
-                    <a href="#" class="hover:text-ink">TikTok</a>
-                    <a href="#" class="hover:text-ink">YouTube</a>
+                    <a href="#" class="hover:text-gray-900">Instagram</a>
+                    <a href="#" class="hover:text-gray-900">TikTok</a>
+                    <a href="#" class="hover:text-gray-900">YouTube</a>
                 </div>
             </div>
         </div>
-        <div class="max-w-6xl mx-auto px-6 mt-10 text-center text-xs text-slate-500 animate-on-scroll" data-animate="fade-up">
-        <div class="max-w-6xl mx-auto px-6 mt-10 text-center text-xs text-slate-500 animate-on-scroll" data-animate="fade-up">
-            (c) 2025 Gamedaytees, Inc. All rights reserved.
+        <div class="max-w-6xl mx-auto px-6 mt-10 text-center text-xs text-slate-500" data-animate="fade-up">
+            &#169; 2025 Gamedaytees, Inc. All rights reserved.
         </div>
     </footer>
+
     <script>
         (() => {
             const toggle = document.getElementById('mobile-menu-toggle');
@@ -393,10 +383,5 @@
             });
         })();
     </script>
-    <script src="js/config.js"></script>
-    <script src="js/shopify-api.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/new.js"></script>
 </body>
 </html>
-
